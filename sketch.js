@@ -53,16 +53,16 @@ function draw() {
   const marsApp    = p5.Vector.sub(mars, observer);
   
 const lineSpec = {
-  mercury: { w: 0.9, col: color(120,120,120, 90) }, 
+  mercury: { w: 0.9, col: color( 80, 150, 255, 90) },
   venus:   { w: 0.8, col: color(255,200,  0, 90) }, 
   mars:    { w: 0.5, col: color(230,  0,  0, 80) }  
 };
 
 const pointSpec = {
  sun:     { w: 2.5, col: color(255,140,10,180) },
-  mercury: { w: 1.5,   col: color(60)  },
-  venus:   { w: 2,   col: color(255,180,0) },
-  mars:    { w: 1.8,   col: color(220,0,0) }
+  mercury: { w: 1.5, col: color( 80, 150, 255) },
+  venus:   { w: 2,   col: color(255,200,0) },
+  mars:    { w: 1.8,   col: color(230,0,0) }
 };
 
 /* ── 線を描く順序を黄→灰→赤に変更 ── */
