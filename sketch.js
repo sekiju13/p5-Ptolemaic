@@ -27,7 +27,7 @@ function setup() {
 function draw() {
     /* ---- フェード背景 ---- */
   noStroke();
-  fill(250, 250, 250, 8);  // 薄いオフホワイト
+  fill(250, 250, 250, 3);  // 薄いオフホワイト
   rect(0, 0, width, height);
   
   // 観測者の円運動
