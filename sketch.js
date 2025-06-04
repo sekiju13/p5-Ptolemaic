@@ -13,7 +13,9 @@ let venusSpeed;
 let marsSpeed;
 
 function setup() {
-  createCanvas(1000, 800);
+ const w = min(windowWidth, 1000);   // 上限1000
+  const h = w * 0.8;                  // 800 : 1000 = 0.8
+  createCanvas(w, h);
    background('#FAFAFA'); 
   frameRate(60);
   observer = createVector(0, 0);
@@ -22,6 +24,12 @@ function setup() {
   mercurySpeed  = TWO_PI / 88.0;
   venusSpeed    = TWO_PI / 225.0;
   marsSpeed     = TWO_PI / 687.0;
+}
+
+function windowResized(){
+  const w = min(windowWidth, 1000);
+  const h = w * 0.8;
+  resizeCanvas(w, h);
 }
 
 function draw() {
