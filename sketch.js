@@ -1,11 +1,14 @@
 let t = 0;
 let observer;
 
-const AU = 140;           // 地球＝1=140px
-const observerRadius = AU;
-const mercuryRadius  = AU * 0.39;   // 55
-const venusRadius    = AU * 0.72;   // 101
-const marsRadius     = AU * 1.52;   // 213
+/* ========== 基準値 ========== */
+const AU = 140;            // 地球=1AU を 140px と想定
+const R_OBS  = AU;         // observer
+const R_MERC = AU * 0.39;  // Mercury
+const R_VEN  = AU * 0.72;  // Venus
+const R_MARS = AU * 1.52;  // Mars
+
+let scaleF;                // 画面に合わせたスケール係数
 
 let observerSpeed;
 let mercurySpeed;
@@ -18,6 +21,7 @@ function setup() {
   createCanvas(w, h);
    background('#FAFAFA'); 
   frameRate(60);
+   calcScale(); 
   observer = createVector(0, 0);
 
   observerSpeed = TWO_PI / 365.0;
@@ -29,7 +33,15 @@ function setup() {
 function windowResized(){
   const w = min(windowWidth, 1000);
   const h = w * 0.8;
+   calcScale();   
   resizeCanvas(w, h);
+}
+
+function calcScale(){
+  const margin = 40;                               // 四辺の余白(px)
+  const maxLogicalRadius = R_OBS + R_MARS;         // ＝140+213=353
+  const avail = (min(windowWidth, windowHeight) - margin) / 2;
+  scaleF = avail / maxLogicalRadius;               // 係数(0〜1)
 }
 
 function draw() {
@@ -38,21 +50,21 @@ function draw() {
   fill(250, 250, 250, 3);  // 薄いオフホワイト
   rect(0, 0, width, height);
   
-  // 観測者の円運動
-  const obsX = observerRadius * cos(t * observerSpeed);
-  const obsY = observerRadius * sin(t * observerSpeed);
+  // 観測者の円運動（論理半径×スケール）
+  const obsX = R_OBS * scaleF * cos(t * observerSpeed);
+  const obsY = R_OBS * scaleF * sin(t * observerSpeed);
   observer.set(obsX, obsY);
 
   translate(width / 2, height / 2);
 
   // 太陽と惑星
   const sun     = createVector(0, 0);
-  const mercury = createVector(mercuryRadius * cos(t * mercurySpeed),
-                                mercuryRadius * sin(t * mercurySpeed));
-  const venus   = createVector(venusRadius   * cos(t * venusSpeed),
-                                venusRadius   * sin(t * venusSpeed));
-  const mars    = createVector(marsRadius    * cos(t * marsSpeed),
-                                marsRadius    * sin(t * marsSpeed));
+  const mercury = createVector(R_MERC*scaleF*cos(t*mercurySpeed),
+                               R_MERC*scaleF*sin(t*mercurySpeed));
+  const venus   = createVector(R_VEN *scaleF*cos(t*venusSpeed),
+                               R_VEN *scaleF*sin(t*venusSpeed));
+  const mars    = createVector(R_MARS*scaleF*cos(t*marsSpeed),
+                               R_MARS*scaleF*sin(t*marsSpeed));
 
   // 観測者視点へ変換
   const sunApp     = p5.Vector.sub(sun, observer);
