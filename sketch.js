@@ -72,7 +72,7 @@ strokeWeight(lineSpec.mercury.w);  stroke(lineSpec.mercury.col);  line(sunApp.x,
   // 点
 //strokeWeight(pointSpec.sun.w);     stroke(pointSpec.sun.col);     point(sunApp.x, sunApp.y);
 strokeWeight(pointSpec.mercury.w); stroke(100,100,100); point(mercuryApp.x, mercuryApp.y);
-strokeWeight(pointSpec.venus.w);     stroke(0,100,255);   point(venusApp.x, venusApp.y);
+strokeWeight(pointSpec.venus.w);     stroke(255,165,0);   point(venusApp.x, venusApp.y);
 strokeWeight(pointSpec.mars.w);    stroke(200,0,0);     point(marsApp.x, marsApp.y);
 
 
