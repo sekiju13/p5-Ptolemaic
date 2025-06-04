@@ -65,9 +65,6 @@ const pointSpec = {
   mars:    { w: 1.8,   col: color(220,0,0) }
 };
 
-  push();
-blendMode(ADD);      // ここから加算合成
-
 /* ── 線を描く順序を黄→灰→赤に変更 ── */
 strokeWeight(lineSpec.venus.w);   stroke(lineSpec.venus.col);   line(sunApp.x,sunApp.y, venusApp.x,venusApp.y);
 strokeWeight(lineSpec.mercury.w); stroke(lineSpec.mercury.col); line(sunApp.x,sunApp.y, mercuryApp.x,mercuryApp.y);
@@ -76,6 +73,9 @@ strokeWeight(lineSpec.mars.w);    stroke(lineSpec.mars.col);    line(sunApp.x,su
   // 線分（太陽↔観測者）
   stroke(255,255,255,15);
   line(0, 0, sunApp.x, sunApp.y);
+
+  push();
+blendMode(ADD);      // ここから加算合成
 
   // 点
 //strokeWeight(pointSpec.sun.w);     stroke(pointSpec.sun.col);     point(sunApp.x, sunApp.y);
