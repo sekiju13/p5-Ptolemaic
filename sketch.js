@@ -60,9 +60,9 @@ const lineSpec = {
 
 const pointSpec = {
  sun:     { w: 2.5, col: color(255,140,10,180) },
-  mercury: { w: 1,   col: color(60)  },
-  venus:   { w: 1,   col: color(255,180,0) },
-  mars:    { w: 1,   col: color(220,0,0) }
+  mercury: { w: 1.5,   col: color(60)  },
+  venus:   { w: 2,   col: color(255,180,0) },
+  mars:    { w: 1.8,   col: color(220,0,0) }
 };
 
   
