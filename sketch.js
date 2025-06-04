@@ -63,7 +63,7 @@ const pointSpec = {
   sun:     { w: 0.8, col: color(255,140, 10,180) },
   mercury: { w: 1.5,   col: color( 80,150,255,180) },
   venus:   { w: 1.5,   col: color(255,200,  0,180) },
-  mars:    { w: 1.5   col: color(230,  0,  0,140) } 
+  mars:    { w: 1.5,   col: color(230,  0,  0,140) } 
 };
 
   // 線分（太陽↔惑星）
