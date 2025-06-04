@@ -46,23 +46,35 @@ function draw() {
   const mercuryApp = p5.Vector.sub(mercury, observer);
   const venusApp   = p5.Vector.sub(venus, observer);
   const marsApp    = p5.Vector.sub(mars, observer);
+  
+const lineSpec = {
+  mercury: { w: 1.0,  col: color(30, 30, 30,  80) },   // 太め・濃いグレイ
+  venus:   { w: 0.9,  col: color(60, 60, 60,  60) },
+  mars:    { w: 0.5,  col: color(120,120,120,40) }      // 細く・薄い
+};
 
-  // 線分
-  strokeWeight(1);
-  stroke(200, 0, 0, 10);   line(sunApp.x, sunApp.y, marsApp.x, marsApp.y);
-  stroke(0, 100, 255, 10); line(sunApp.x, sunApp.y, venusApp.x, venusApp.y);
-  stroke(100, 100, 100,10);line(sunApp.x, sunApp.y, mercuryApp.x, mercuryApp.y);
+const pointSpec = {
+  sun:     { w: 4, col: color(255,120,0 ,150) },        // アクセントの強色
+  mercury: { w: 2, col: color(50)            },         // グレイ
+  venus:   { w: 2, col: color(80)            },
+  mars:    { w: 2, col: color(120)           }
+};
+  
+  // 線分（太陽→惑星）
+strokeWeight(lineSpec.mars.w);     stroke(lineSpec.mars.col);     line(sunApp.x, sunApp.y, marsApp.x, marsApp.y);
+strokeWeight(lineSpec.venus.w);    stroke(lineSpec.venus.col);    line(sunApp.x, sunApp.y, venusApp.x, venusApp.y);
+strokeWeight(lineSpec.mercury.w);  stroke(lineSpec.mercury.col);  line(sunApp.x, sunApp.y, mercuryApp.x, mercuryApp.y);
 
-  // 太陽↔観測者
-  stroke(255,255,255,10);
+  // 線分（太陽↔観測者）
+  stroke(255,255,255,15);
   line(0, 0, sunApp.x, sunApp.y);
 
   // 点
-  strokeWeight(2);
-  stroke(255,165,0);   point(sunApp.x, sunApp.y);
-  stroke(100,100,100); point(mercuryApp.x, mercuryApp.y);
-  stroke(0,100,255);   point(venusApp.x, venusApp.y);
-  stroke(200,0,0);     point(marsApp.x, marsApp.y);
+strokeWeight(pointSpec.sun.w);     stroke(pointSpec.sun.col);     point(sunApp.x, sunApp.y);
+strokeWeight(pointSpec.mercury.w); stroke(pointSpec.mercury.col); point(mercuryApp.x, mercuryApp.y);
+strokeWeight(pointSpec.venus.w);   stroke(pointSpec.venus.col);   point(venusApp.x, venusApp.y);
+strokeWeight(pointSpec.mars.w);    stroke(pointSpec.mars.col);    point(marsApp.x, marsApp.y);
+
 
   t += 1;
 }
