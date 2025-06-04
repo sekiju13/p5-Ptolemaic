@@ -14,7 +14,7 @@ let marsSpeed;
 
 function setup() {
   createCanvas(1000, 800);
-  background(255);
+   background('#FAFAFA'); 
   frameRate(60);
   observer = createVector(0, 0);
 
@@ -48,16 +48,16 @@ function draw() {
   const marsApp    = p5.Vector.sub(mars, observer);
   
 const lineSpec = {
-  mercury: { w: 1.0,  col: color( 60, 60, 60,  80) },   // 濃グレー
-  venus:   { w: 0.9,  col: color(255,180,  0,  60) },   // 黄
-  mars:    { w: 0.5,  col: color(220,  0,  0,  40) }    // 赤
+   mercury: { w: 0.9,  col: color(60, 60, 60, 40) },
+  venus:   { w: 0.8,  col: color(255,180, 0, 35) },
+  mars:    { w: 0.5,  col: color(220,  0, 0, 30) }
 };
 
 const pointSpec = {
-  sun:     { w: 3, col: color(255,120,0 ,150) },   // 太陽
-  mercury: { w: 1, col: color( 60)           },    // 1px
-  venus:   { w: 1, col: color(255,180,0)     },    // 1px
-  mars:    { w: 1, col: color(220,  0,0)     }     // 1px
+ sun:     { w: 2.5, col: color(255,140,10,180) },
+  mercury: { w: 1,   col: color(60)  },
+  venus:   { w: 1,   col: color(255,180,0) },
+  mars:    { w: 1,   col: color(220,0,0) }
 };
 
   
