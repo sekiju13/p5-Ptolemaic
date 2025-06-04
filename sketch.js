@@ -55,15 +55,15 @@ function draw() {
 const lineSpec = {
   mercury: { w: 0.9, col: color( 80,150,255, 90) }, // Lt-blue
   venus:   { w: 0.8, col: color(255,200,  0, 90) }, // Yellow
-  mars:    { w: 0.5, col: color(230,  0,  0, 50) }  // Red
+  mars:    { w: 0.5, col: color(230,  0,  0, 30) }  // Red
 };
 
 
 const pointSpec = {
   sun:     { w: 0.8, col: color(255,140, 10,180) },
-  mercury: { w: 1.4,   col: color( 80,150,255,180) },
-  venus:   { w: 1.3,   col: color(255,200,  0,180) },
-  mars:    { w: 1,   col: color(230,  0,  0,140) } 
+  mercury: { w: 1.5,   col: color( 80,150,255,180) },
+  venus:   { w: 1.5,   col: color(255,200,  0,180) },
+  mars:    { w: 1.5   col: color(230,  0,  0,140) } 
 };
 
   // 線分（太陽↔惑星）
@@ -73,7 +73,7 @@ strokeWeight(lineSpec.mercury.w); stroke(lineSpec.mercury.col); line(sunApp.x,su
 
   
   // 線分（太陽↔観測者）
-  stroke(255,255,255,15);
+  stroke(255,255,255,20);
   line(0, 0, sunApp.x, sunApp.y);
 
   push();
