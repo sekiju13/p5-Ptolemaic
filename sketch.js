@@ -1,10 +1,11 @@
 let t = 0;
 let observer;
 
-const observerRadius = 200;
-const mercuryRadius  = 70;
-const venusRadius    = 100;
-const marsRadius     = 300;
+const AU = 140;           // 地球＝1=140px
+const observerRadius = AU;
+const mercuryRadius  = AU * 0.39;   // 55
+const venusRadius    = AU * 0.72;   // 101
+const marsRadius     = AU * 1.52;   // 213
 
 let observerSpeed;
 let mercurySpeed;
