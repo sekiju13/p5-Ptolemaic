@@ -48,17 +48,18 @@ function draw() {
   const marsApp    = p5.Vector.sub(mars, observer);
   
 const lineSpec = {
-  mercury: { w: 1.0,  col: color(30, 30, 30,  80) },   // 太め・濃いグレイ
-  venus:   { w: 0.9,  col: color(60, 60, 60,  60) },
-  mars:    { w: 0.5,  col: color(120,120,120,40) }      // 細く・薄い
+  mercury: { w: 1.0,  col: color( 60, 60, 60,  80) },   // 濃グレー
+  venus:   { w: 0.9,  col: color(255,180,  0,  60) },   // 黄
+  mars:    { w: 0.5,  col: color(220,  0,  0,  40) }    // 赤
 };
 
 const pointSpec = {
-  sun:     { w: 4, col: color(255,120,0 ,150) },        // アクセントの強色
-  mercury: { w: 2, col: color(100,100,100)            },      
-  venus:   { w: 2, col: color(255,165,0)            },
-  mars:    { w: 2, col: color(200,0,0)           }
+  sun:     { w: 3, col: color(255,120,0 ,150) },   // 太陽
+  mercury: { w: 1, col: color( 60)           },    // 1px
+  venus:   { w: 1, col: color(255,180,0)     },    // 1px
+  mars:    { w: 1, col: color(220,  0,0)     }     // 1px
 };
+
   
   // 線分（太陽→惑星）
 strokeWeight(lineSpec.mars.w);     stroke(lineSpec.mars.col);     line(sunApp.x, sunApp.y, marsApp.x, marsApp.y);
