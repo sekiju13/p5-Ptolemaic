@@ -55,9 +55,9 @@ const lineSpec = {
 
 const pointSpec = {
   sun:     { w: 4, col: color(255,120,0 ,150) },        // アクセントの強色
-  mercury: { w: 2, col: color(50)            },         // グレイ
-  venus:   { w: 2, col: color(80)            },
-  mars:    { w: 2, col: color(120)           }
+  mercury: { w: 2, col: color(100,100,100)            },      
+  venus:   { w: 2, col: color(255,165,0)            },
+  mars:    { w: 2, col: color(200,0,0)           }
 };
   
   // 線分（太陽→惑星）
@@ -71,9 +71,9 @@ strokeWeight(lineSpec.mercury.w);  stroke(lineSpec.mercury.col);  line(sunApp.x,
 
   // 点
 //strokeWeight(pointSpec.sun.w);     stroke(pointSpec.sun.col);     point(sunApp.x, sunApp.y);
-strokeWeight(pointSpec.mercury.w); stroke(100,100,100); point(mercuryApp.x, mercuryApp.y);
-strokeWeight(pointSpec.venus.w);     stroke(255,165,0);   point(venusApp.x, venusApp.y);
-strokeWeight(pointSpec.mars.w);    stroke(200,0,0);     point(marsApp.x, marsApp.y);
+strokeWeight(pointSpec.mercury.w); stroke(lineSpec.mars.col); point(mercuryApp.x, mercuryApp.y);
+strokeWeight(pointSpec.venus.w);    stroke(lineSpec.venus.col);    point(venusApp.x, venusApp.y);
+strokeWeight(pointSpec.mars.w);   stroke(lineSpec.mercury.col);     point(marsApp.x, marsApp.y);
 
 
   t += 1;
