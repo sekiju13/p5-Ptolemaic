@@ -101,9 +101,9 @@ blendMode(ADD);      // ここから加算合成
 
   // 点
 strokeWeight(pointSpec.sun.w);     stroke(pointSpec.sun.col);     point(sunApp.x, sunApp.y);
-strokeWeight(pointSpec.mercury.w); stroke(lineSpec.mars.col); point(mercuryApp.x, mercuryApp.y);
-strokeWeight(pointSpec.venus.w);    stroke(lineSpec.venus.col);    point(venusApp.x, venusApp.y);
-strokeWeight(pointSpec.mars.w);   stroke(lineSpec.mercury.col);     point(marsApp.x, marsApp.y);
+strokeWeight(pointSpec.mercury.w); stroke(pointSpec.mercury.col);     point(mercuryApp.x, mercuryApp.y);
+strokeWeight(pointSpec.venus.w);    stroke(pointSpec.venus.col);    point(venusApp.x, venusApp.y);
+strokeWeight(pointSpec.mars.w);   stroke(pointSpec.mars.col);     point(marsApp.x, marsApp.y);
 
 pop();               // blendMode を元に戻す
 
